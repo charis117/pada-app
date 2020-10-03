@@ -33,7 +33,7 @@ public class MainActivity extends Activity
 				        fTex.append(":");
 				        fTex.append(title);
 				        fTex.append("\n");
-				        int b=5;
+
 
 					}
 
@@ -50,5 +50,7 @@ public class MainActivity extends Activity
 			}
 
 		});
+
+		th.start();
 	}
 }
