@@ -23,6 +23,7 @@ public class MainActivity extends Activity
 					Document wb=Jsoup.connect("https://eee.uniwa.gr/el/anakinoseis/anakoinoseis-grammateias").get();
 					System.out.println(wb.title());
 					Elements els=wb.getElementsByTag("article");
+					int size =els.size();
 
 					final String timeString=els.get(0).getElementsByTag("time").html();
 					final String timeSpampString=els.get(0).getElementsByTag("time").attr("datetime");
