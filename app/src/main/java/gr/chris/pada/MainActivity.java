@@ -26,9 +26,9 @@ public class MainActivity extends Activity
 					Elements els=wb.getElementsByTag("article");
 					final StringBuilder fTex=new StringBuilder();
 					for(Element ei:els) {
-						final String timeString=ei.getElementsByTag("time").html();
+						final String timeString=ei.getElementsByTag("time").text();
 						final String timeSpampString=ei.getElementsByTag("time").attr("datetime");
-				        String title=ei.getElementsByTag("itemprop").get(0).html();
+				        String title=ei.getElementsByTag("h2").get(0).html();
 				        fTex.append(timeString);
 				        fTex.append(":");
 				        fTex.append(title);
@@ -43,7 +43,9 @@ public class MainActivity extends Activity
 							tv.setText(fTex.toString());
 						}
 					});
-				}catch(IOException e){}
+				}catch(IOException e){
+					Toast.makeText(getApplicationContext(),e.getClass().getName()+":"+e.getMessage(), Toast.LENGTH_LONG).show();
+				}
 
 
 
